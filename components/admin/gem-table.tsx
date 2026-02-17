@@ -140,9 +140,6 @@ export function GemTable() {
                       <span className="text-sm font-medium text-foreground">
                         {gem.title}
                       </span>
-                      <span className="text-xs text-muted-foreground line-clamp-1">
-                        {gem.description}
-                      </span>
                     </div>
                   </TableCell>
                   <TableCell>
