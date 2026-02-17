@@ -11,24 +11,24 @@
   },
   {
     "id": "gem-code-reviewer",
-    "title": "Context Keeper",
-    "description": "Risk-first meeting analyst: spots misalignment, superficial agreement, and shaky commitments—then outputs clear action items with owners and deadlines.",
-    "url": "https://gemini.google.com/gem/15I7hKNaDD0yq7zadp8zjllNLpRG5behf?usp=sharing",
-    "previewImageUrl": "https://res.cloudinary.com/djrtjqve4/image/upload/v1771344707/THEME__Meeting_analyst_that_prioritizes_risk._It_detects_where_people_talked_past_each_other__where_agreement_was_superficial__and_where_commitments_are_unstable___plus_it_outputs_clean_action_items_with_owners_and_deadlines.__Style___moo_bbbrho.jpg",
+    "title": "Code Review Assistant",
+    "description": "Reviews pull requests and suggests improvements for readability and performance.",
+    "url": "https://gemini.google.com/gem/code-review-assistant",
+    "previewImageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=338&fit=crop",
     "published": true,
     "createdAt": "2025-10-02T09:00:00.000Z",
-    "updatedAt": "2026-02-17T16:20:18.772Z",
-    "icon": "star"
+    "updatedAt": "2025-10-02T09:00:00.000Z"
   },
   {
     "id": "gem-meeting-notes",
-    "title": "Meeting Notes Summarizer",
-    "description": "Turns messy meeting transcripts into structured action items and key decisions.",
-    "url": "https://gemini.google.com/gem/meeting-notes-summarizer",
-    "previewImageUrl": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=338&fit=crop",
+    "title": "Dark Signal Cards",
+    "description": "Generate enterprise-friendly, high-end cover cards from a single theme. ",
+    "url": "https://gemini.google.com/gem/1yyzox2xnkDsUUUpG6ji7A4TYCLqcdIkN?usp=sharing",
+    "previewImageUrl": "https://res.cloudinary.com/djrtjqve4/image/upload/v1771345715/THEME__Generate_enterprise-friendly__high-end_cover_cards_from_a_single_theme.___Style___mood_-_Predominantly_dark_background__near-black___deep_navy__high_contrast__cinematic_lighting._-_Realistic__high-end_3D_look_with_a_subtle_sci-f_1_v4iwg2.jpg",
     "published": true,
     "createdAt": "2025-10-03T10:00:00.000Z",
-    "updatedAt": "2025-10-03T10:00:00.000Z"
+    "updatedAt": "2026-02-17T16:28:44.247Z",
+    "icon": "image"
   },
   {
     "id": "gem-sql-helper",
