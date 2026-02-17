@@ -1,0 +1,122 @@
+[
+  {
+    "id": "gem-email-drafts",
+    "title": "Instructor",
+    "description": "Helps turn a product brief into md-instructions for vibecoding",
+    "url": "https://gemini.google.com/gem/1Jg5EKtOytsSvccqUTw2vUyQt1oUxEroc?usp=sharing",
+    "previewImageUrl": "https://plus.unsplash.com/premium_photo-1733317453473-175c9831c874?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
+    "published": true,
+    "createdAt": "2025-10-01T08:00:00.000Z",
+    "updatedAt": "2026-02-17T13:52:56.789Z"
+  },
+  {
+    "id": "gem-code-reviewer",
+    "title": "Code Review Assistant",
+    "description": "Reviews pull requests and suggests improvements for readability and performance.",
+    "url": "https://gemini.google.com/gem/code-review-assistant",
+    "previewImageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-02T09:00:00.000Z",
+    "updatedAt": "2025-10-02T09:00:00.000Z"
+  },
+  {
+    "id": "gem-meeting-notes",
+    "title": "Meeting Notes Summarizer",
+    "description": "Turns messy meeting transcripts into structured action items and key decisions.",
+    "url": "https://gemini.google.com/gem/meeting-notes-summarizer",
+    "previewImageUrl": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-03T10:00:00.000Z",
+    "updatedAt": "2025-10-03T10:00:00.000Z"
+  },
+  {
+    "id": "gem-sql-helper",
+    "title": "SQL Query Builder",
+    "description": "Generates optimized SQL queries from natural language descriptions of what you need.",
+    "url": "https://gemini.google.com/gem/sql-query-builder",
+    "previewImageUrl": "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-04T11:00:00.000Z",
+    "updatedAt": "2025-10-04T11:00:00.000Z"
+  },
+  {
+    "id": "gem-marketing-copy",
+    "title": "Marketing Copy Generator",
+    "description": "Creates compelling marketing copy for campaigns, landing pages, and social media.",
+    "url": "https://gemini.google.com/gem/marketing-copy-gen",
+    "previewImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-05T12:00:00.000Z",
+    "updatedAt": "2025-10-05T12:00:00.000Z"
+  },
+  {
+    "id": "gem-data-analyst",
+    "title": "Data Analysis Companion",
+    "description": "Helps interpret datasets, generate charts, and uncover trends from raw numbers.",
+    "url": "https://gemini.google.com/gem/data-analysis-companion",
+    "previewImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-06T13:00:00.000Z",
+    "updatedAt": "2025-10-06T13:00:00.000Z"
+  },
+  {
+    "id": "gem-bug-detective",
+    "title": "Bug Detective",
+    "description": "Analyzes error logs and stack traces to pinpoint root causes and suggest fixes.",
+    "url": "https://gemini.google.com/gem/bug-detective",
+    "previewImageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-07T14:00:00.000Z",
+    "updatedAt": "2025-10-07T14:00:00.000Z"
+  },
+  {
+    "id": "gem-doc-writer",
+    "title": "Documentation Writer",
+    "description": "Generates clear technical documentation from code, comments, and API schemas.",
+    "url": "https://gemini.google.com/gem/documentation-writer",
+    "previewImageUrl": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-08T15:00:00.000Z",
+    "updatedAt": "2025-10-08T15:00:00.000Z"
+  },
+  {
+    "id": "gem-persona-research",
+    "title": "User Persona Builder",
+    "description": "Creates detailed user personas based on research inputs and market data.",
+    "url": "https://gemini.google.com/gem/user-persona-builder",
+    "previewImageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=338&fit=crop",
+    "published": true,
+    "createdAt": "2025-10-09T16:00:00.000Z",
+    "updatedAt": "2025-10-09T16:00:00.000Z"
+  },
+  {
+    "id": "gem-onboarding-guide",
+    "title": "Onboarding Guide",
+    "description": "Walks new team members through internal processes and tooling setup.",
+    "url": "https://gemini.google.com/gem/onboarding-guide",
+    "previewImageUrl": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=338&fit=crop",
+    "published": false,
+    "createdAt": "2025-10-10T17:00:00.000Z",
+    "updatedAt": "2025-10-10T17:00:00.000Z"
+  },
+  {
+    "id": "gem-translation-helper",
+    "title": "Translation Assistant",
+    "description": "Translates product copy between languages while preserving tone and context.",
+    "url": "https://gemini.google.com/gem/translation-assistant",
+    "previewImageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=338&fit=crop",
+    "published": false,
+    "createdAt": "2025-10-11T18:00:00.000Z",
+    "updatedAt": "2025-10-11T18:00:00.000Z"
+  },
+  {
+    "id": "gem-sprint-planner",
+    "title": "Sprint Planner",
+    "description": "Helps break epics into stories and estimate effort for sprint planning sessions.",
+    "url": "https://gemini.google.com/gem/sprint-planner",
+    "previewImageUrl": "https://images.unsplash.com/photo-1512758017271-d7b84c2113f1?w=600&h=338&fit=crop",
+    "published": false,
+    "createdAt": "2025-10-12T19:00:00.000Z",
+    "updatedAt": "2025-10-12T19:00:00.000Z"
+  }
+]
