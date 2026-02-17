@@ -15,14 +15,14 @@ export function GemCard({ gem }: GemCardProps) {
     <Link
       href={gem.url}
       target="_blank"
-      className="group relative block h-[320px] w-[240px] overflow-hidden rounded-[16px] border border-white/20 bg-muted transition-transform hover:-translate-y-1 hover:shadow-xl"
+      className="group relative block h-[640px] w-[480px] overflow-hidden rounded-[16px] border border-white/20 bg-muted transition-transform hover:-translate-y-1"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img
           src={gem.previewImageUrl}
           alt=""
-          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="h-full w-full object-cover"
         />
         {/* Gradient Overlay for Text Readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#101619] via-[#101619]/40 to-transparent opacity-90" />

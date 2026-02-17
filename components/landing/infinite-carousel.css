@@ -1,0 +1,93 @@
+/* Infinite Carousel Styles */
+.infinite-carousel-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #101619;
+    /* Fallback for initial load */
+    color: #fff;
+    overflow: hidden;
+    perspective: 1800px;
+    overscroll-behavior: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    touch-action: none;
+    /* Disable native scroll */
+    cursor: grab;
+}
+
+.infinite-carousel-container.dragging {
+    cursor: grabbing;
+}
+
+/* Canvas Background */
+#carousel-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    filter: blur(24px) saturate(1.05);
+    /* Slight blur/saturation for effect */
+    pointer-events: none;
+}
+
+/* Cards Container */
+.carousel-cards {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    transform-style: preserve-3d;
+    pointer-events: none;
+}
+
+/* Card Wrapper */
+.carousel-card-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* DOUBLED SIZE: 240 -> 480, 320 -> 640 */
+    width: 480px;
+    height: 640px;
+    /* Center transform origin */
+    transform-origin: 50% 50%;
+    transform-style: preserve-3d;
+    will-change: transform, filter;
+    pointer-events: auto;
+    /* Allow clicking the link inside */
+}
+
+/* Loading Indicator */
+.carousel-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    background: #101619;
+    color: #EAFF01;
+    transition: opacity 0.5s ease;
+}
+
+.carousel-loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Spinner */
+.carousel-spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(234, 255, 1, 0.3);
+    border-top-color: #EAFF01;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
