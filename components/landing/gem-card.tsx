@@ -15,7 +15,7 @@ export function GemCard({ gem }: GemCardProps) {
     <Link
       href={gem.url}
       target="_blank"
-      className="group relative block h-[640px] w-[480px] overflow-hidden rounded-[16px] border border-white/20 bg-muted transition-transform hover:-translate-y-1"
+      className="group relative block h-[480px] w-[360px] overflow-hidden rounded-[16px] border border-white/20 bg-muted transition-transform hover:-translate-y-1"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">

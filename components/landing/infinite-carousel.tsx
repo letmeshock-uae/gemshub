@@ -27,8 +27,8 @@ const MAX_ROTATION = 32 // Tilt
 const MAX_DEPTH = 180 // Deep perspective
 const MIN_SCALE = 0.86 // How small unselected cards get
 const SCALE_RANGE = 0.14 // Scale diff
-const CARD_W = 480
-const GAP = 50 // Reduced spacing
+const CARD_W = 360
+const GAP = 120 // Increased spacing for more air
 const STEP = CARD_W + GAP
 
 interface InfiniteCarouselProps {
