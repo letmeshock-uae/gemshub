@@ -452,6 +452,14 @@ export function InfiniteCarousel({ gems }: InfiniteCarouselProps) {
                 />
             </div>
 
+            {/* Footer Text */}
+            <div className="absolute bottom-16 left-0 w-full text-center pointer-events-none z-50 px-4">
+                <p className="text-[10px] leading-[12px] text-white/60 font-sans max-w-[300px] mx-auto">
+                    A shared library of Gemini Gems that help<br />
+                    colleagues solve everyday work tasks quickly and consistently
+                </p>
+            </div>
+
             {/* Admin Link (Bottom Right) */}
             <div className="absolute bottom-8 right-8 z-50 pointer-events-auto">
                 <a href="/admin" className="text-xs text-gray-500 hover:text-white transition-colors">
