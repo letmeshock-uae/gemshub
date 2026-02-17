@@ -8,6 +8,7 @@ export interface Gem {
   description: string
   url: string
   previewImageUrl: string
+  icon?: string
   published: boolean
   createdAt: string
   updatedAt: string

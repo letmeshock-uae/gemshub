@@ -24,6 +24,7 @@ export const gemFormSchema = z.object({
       { message: "Must be a valid URL or a local path starting with /" }
     ),
   published: z.boolean(),
+  icon: z.string().optional(),
 })
 
 export type GemFormValues = z.infer<typeof gemFormSchema>

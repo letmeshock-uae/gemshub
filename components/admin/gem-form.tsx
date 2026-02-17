@@ -15,7 +15,7 @@ import { Switch } from "@/components/ui/switch"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ArrowLeft } from "@phosphor-icons/react"
 import Link from "next/link"
-
+import { IconPicker } from "@/components/admin/icon-picker"
 interface GemFormProps {
   gem?: Gem
 }
@@ -158,6 +158,17 @@ export function GemForm({ gem }: GemFormProps) {
               )}
             </div>
 
+            <div className="flex flex-col gap-2">
+              <Label>Icon <span className="text-destructive">*</span></Label>
+              <IconPicker
+                value={watch("icon")}
+                onChange={(val) => setValue("icon", val)}
+              />
+              {!watch("icon") && (
+                <p className="text-xs text-muted-foreground">Select an icon for the card.</p>
+              )}
+            </div>
+
             <div className="flex items-center justify-between rounded-lg border border-border p-4">
               <div>
                 <Label htmlFor="published" className="cursor-pointer">
@@ -205,7 +216,7 @@ export function GemForm({ gem }: GemFormProps) {
                       alt="Preview"
                       className="h-full w-full object-cover"
                       onError={(e) => {
-                        ;(e.target as HTMLImageElement).style.display = "none"
+                        ; (e.target as HTMLImageElement).style.display = "none"
                       }}
                     />
                   ) : (
