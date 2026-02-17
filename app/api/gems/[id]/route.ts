@@ -15,7 +15,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
   const body = await req.json()
-  const gem = store.update(id, body)
+  const gem = await store.update(id, body)
   if (!gem) return NextResponse.json({ error: "Not found" }, { status: 404 })
   return NextResponse.json(gem)
 }
@@ -23,7 +23,7 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
 // DELETE /api/gems/:id
 export async function DELETE(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
-  const ok = store.remove(id)
+  const ok = await store.remove(id)
   if (!ok) return NextResponse.json({ error: "Not found" }, { status: 404 })
   return NextResponse.json({ success: true })
 }

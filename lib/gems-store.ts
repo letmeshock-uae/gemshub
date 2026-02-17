@@ -14,37 +14,46 @@ export interface Gem {
 }
 
 const DATA_FILE = path.join(process.cwd(), "data", "gems.json")
+const CACHE_FILE = "/tmp/gems.json"
 
 function load(): Gem[] {
+  // 1. Try Cache (most recent on this lambda)
   try {
-    if (!fs.existsSync(DATA_FILE)) {
-      return []
+    if (fs.existsSync(CACHE_FILE)) {
+      return JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8"))
     }
-    const raw = fs.readFileSync(DATA_FILE, "utf-8")
-    return JSON.parse(raw) as Gem[]
-  } catch (error) {
-    console.error("Failed to load gems:", error)
-    return []
-  }
+  } catch { }
+
+  // 2. Try Build-time File
+  try {
+    if (fs.existsSync(DATA_FILE)) {
+      return JSON.parse(fs.readFileSync(DATA_FILE, "utf-8"))
+    }
+  } catch { }
+
+  return []
 }
 
-
-
-function save(gems: Gem[]): void {
+async function save(gems: Gem[]): Promise<void> {
+  // 1. Try Persistence (Local) - Ignore failure on Vercel
   try {
     const dir = path.dirname(DATA_FILE)
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true })
-    }
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
     fs.writeFileSync(DATA_FILE, JSON.stringify(gems, null, 2), "utf-8")
+  } catch { }
 
-    // Fire-and-forget sync to GitHub
-    // We don't await this because 'save' is synchronous and we don't want to block the UI
-    syncToGithub(gems).catch(err => console.error("Background sync failed:", err))
+  // 2. Write to Cache (Vercel)
+  try {
+    fs.writeFileSync(CACHE_FILE, JSON.stringify(gems, null, 2), "utf-8")
+  } catch (e) {
+    console.error("Cache write failed", e)
+  }
 
-  } catch (error) {
-    console.error("Failed to write gems data:", error)
-    throw error
+  // 3. Sync to GitHub (Await for safety)
+  try {
+    await syncToGithub(gems)
+  } catch (e) {
+    console.error("GitHub Sync failed", e)
   }
 }
 
@@ -60,7 +69,7 @@ export function getById(id: string): Gem | undefined {
   return load().find((g) => g.id === id)
 }
 
-export function create(data: Omit<Gem, "id" | "createdAt" | "updatedAt">): Gem {
+export async function create(data: Omit<Gem, "id" | "createdAt" | "updatedAt">): Promise<Gem> {
   const gems = load()
   const now = new Date().toISOString()
   const newGem: Gem = {
@@ -70,11 +79,11 @@ export function create(data: Omit<Gem, "id" | "createdAt" | "updatedAt">): Gem {
     updatedAt: now,
   }
   gems.push(newGem)
-  save(gems)
+  await save(gems)
   return newGem
 }
 
-export function update(id: string, data: Partial<Omit<Gem, "id" | "createdAt" | "updatedAt">>): Gem | null {
+export async function update(id: string, data: Partial<Omit<Gem, "id" | "createdAt" | "updatedAt">>): Promise<Gem | null> {
   const gems = load()
   const index = gems.findIndex((g) => g.id === id)
   if (index === -1) return null
@@ -83,25 +92,25 @@ export function update(id: string, data: Partial<Omit<Gem, "id" | "createdAt" | 
     ...data,
     updatedAt: new Date().toISOString(),
   }
-  save(gems)
+  await save(gems)
   return gems[index]
 }
 
-export function remove(id: string): boolean {
+export async function remove(id: string): Promise<boolean> {
   const gems = load()
   const filtered = gems.filter((g) => g.id !== id)
   if (filtered.length === gems.length) return false
-  save(filtered)
+  await save(filtered)
   return true
 }
 
-export function togglePublished(id: string): Gem | null {
+export async function togglePublished(id: string): Promise<Gem | null> {
   const gems = load()
   const index = gems.findIndex((g) => g.id === id)
   if (index === -1) return null
   gems[index].published = !gems[index].published
   gems[index].updatedAt = new Date().toISOString()
-  save(gems)
+  await save(gems)
   return gems[index]
 }
 

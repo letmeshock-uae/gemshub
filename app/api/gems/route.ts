@@ -11,6 +11,6 @@ export async function GET() {
 // POST /api/gems — create a new gem
 export async function POST(req: Request) {
   const body = await req.json()
-  const gem = store.create(body)
+  const gem = await store.create(body)
   return NextResponse.json(gem, { status: 201 })
 }
