@@ -11,13 +11,14 @@
   },
   {
     "id": "gem-code-reviewer",
-    "title": "Code Review Assistant",
-    "description": "Reviews pull requests and suggests improvements for readability and performance.",
-    "url": "https://gemini.google.com/gem/code-review-assistant",
-    "previewImageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=338&fit=crop",
+    "title": "Context Keeper",
+    "description": "Meeting analyst that prioritizes risk. It detects where people talked past each other, where agreement was superficial, and so on",
+    "url": "https://gemini.google.com/gem/15I7hKNaDD0yq7zadp8zjllNLpRG5behf?usp=sharing",
+    "previewImageUrl": "https://res.cloudinary.com/djrtjqve4/image/upload/v1771344707/THEME__Meeting_analyst_that_prioritizes_risk._It_detects_where_people_talked_past_each_other__where_agreement_was_superficial__and_where_commitments_are_unstable___plus_it_outputs_clean_action_items_with_owners_and_deadlines.__Style___moo_bbbrho.jpg",
     "published": true,
     "createdAt": "2025-10-02T09:00:00.000Z",
-    "updatedAt": "2025-10-02T09:00:00.000Z"
+    "updatedAt": "2026-02-17T16:31:37.504Z",
+    "icon": "audio"
   },
   {
     "id": "gem-meeting-notes",
