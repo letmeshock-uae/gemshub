@@ -465,12 +465,7 @@ export function InfiniteCarousel({ gems }: InfiniteCarouselProps) {
                 </p>
             </div>
 
-            {/* Admin Link (Bottom Right) */}
-            <div className="absolute bottom-8 right-8 z-50 pointer-events-auto">
-                <a href="/admin" className="text-xs text-gray-500 hover:text-white transition-colors">
-                    ADMIN PANEL
-                </a>
-            </div>
+
         </div>
     )
 }
