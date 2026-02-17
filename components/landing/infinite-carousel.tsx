@@ -442,11 +442,14 @@ export function InfiniteCarousel({ gems }: InfiniteCarouselProps) {
             </div>
 
             {/* Overlay Header if user wants 'Title only' */}
-            <div className="absolute top-8 left-0 w-full text-center pointer-events-none z-50">
-                <h1 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-                    DATUM GEMS HUB
-                </h1>
-                <p className="text-sm text-gray-400 mt-2">Drag to explore</p>
+            <div className="absolute top-8 left-0 w-full flex justify-center pointer-events-none z-50">
+                <img
+                    src="/logo.svg"
+                    alt="Datum Gems Hub Logo"
+                    width={259}
+                    height={53}
+                    className="h-[53px] w-auto opacity-90"
+                />
             </div>
 
             {/* Admin Link (Bottom Right) */}
