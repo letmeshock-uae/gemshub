@@ -341,66 +341,71 @@ export function InfiniteCarousel({ gems }: InfiniteCarouselProps) {
             s.vX += d * WHEEL_SENS
         }
 
-        // Drag
+        // Drag Logic (Window Listeners to avoid capturing click)
         let startX = 0
         let lastDragTime = 0
 
-        const onDown = (e: PointerEvent) => {
-            // We allow dragging ANYWHERE on the container
-            s.drag.active = true
-            s.drag.x = e.clientX
-            startX = e.clientX
-            lastDragTime = performance.now()
-            s.vX = 0
-            s.drag.delta = 0 // Reset movement amount
-            s.drag.hasMoved = false
-
-            container.setPointerCapture(e.pointerId)
-            container.classList.add("dragging")
-        }
-
-        const onMove = (e: PointerEvent) => {
+        const onWindowMove = (e: PointerEvent) => {
             if (!s.drag.active) return
-            e.preventDefault()
+
             const now = performance.now()
             const dx = e.clientX - s.drag.x
 
-            // Track total movement to distinguish click vs drag
             s.drag.delta += Math.abs(dx)
-            if (s.drag.delta > 5) s.drag.hasMoved = true
+            if (s.drag.delta > 5) {
+                s.drag.hasMoved = true
+                e.preventDefault() // Prevent selection
+            }
 
-            // Move scroll directly
             s.scrollX -= dx * DRAG_SENS
 
-            // Calculate velocity for throw
             const dt = now - lastDragTime
             if (dt > 0) {
-                s.vX = -(dx / dt) * 15 // Scale for throw feel
+                s.vX = -(dx / dt) * 15
             }
 
             s.drag.x = e.clientX
             lastDragTime = now
         }
 
-        const onUp = (e: PointerEvent) => {
-            if (!s.drag.active) return
+        const onWindowUp = (e: PointerEvent) => {
             s.drag.active = false
-            container.releasePointerCapture(e.pointerId)
+            window.removeEventListener("pointermove", onWindowMove)
+            window.removeEventListener("pointerup", onWindowUp)
             container.classList.remove("dragging")
+        }
+
+        const onDown = (e: PointerEvent) => {
+            const target = e.target as HTMLElement
+
+            // Ignore interactions on Admin Link (or any link outside cards)
+            // This allows the Admin Link to be clicked properly.
+            if (target.closest("a") && !target.closest(".carousel-card-wrapper")) {
+                return
+            }
+
+            s.drag.active = true
+            s.drag.x = e.clientX
+            startX = e.clientX
+            lastDragTime = performance.now()
+            s.vX = 0
+            s.drag.delta = 0
+            s.drag.hasMoved = false
+
+            container.classList.add("dragging")
+
+            window.addEventListener("pointermove", onWindowMove)
+            window.addEventListener("pointerup", onWindowUp)
         }
 
         container.addEventListener("wheel", onWheel, { passive: false })
         container.addEventListener("pointerdown", onDown)
-        container.addEventListener("pointermove", onMove)
-        container.addEventListener("pointerup", onUp)
-        container.addEventListener("pointercancel", onUp)
 
         return () => {
             container.removeEventListener("wheel", onWheel)
             container.removeEventListener("pointerdown", onDown)
-            container.removeEventListener("pointermove", onMove)
-            container.removeEventListener("pointerup", onUp)
-            container.removeEventListener("pointercancel", onUp)
+            window.removeEventListener("pointermove", onWindowMove)
+            window.removeEventListener("pointerup", onWindowUp)
         }
 
     }, []) // Bind once
