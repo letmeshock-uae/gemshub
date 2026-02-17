@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import useSWR from "swr"
 import { toast } from "sonner"
 import type { Gem } from "@/lib/gems-store"
@@ -36,6 +37,7 @@ import {
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
 export function GemTable() {
+  const router = useRouter()
   const { data: gems, mutate, isLoading } = useSWR<Gem[]>("/api/gems", fetcher, {
     refreshInterval: 0,
     revalidateOnFocus: false,
@@ -119,7 +121,11 @@ export function GemTable() {
             </TableHeader>
             <TableBody>
               {gems.map((gem) => (
-                <TableRow key={gem.id}>
+                <TableRow
+                  key={gem.id}
+                  className="cursor-pointer hover:bg-muted/50 transition-colors"
+                  onClick={() => router.push(`/admin/${gem.id}/edit`)}
+                >
                   <TableCell>
                     <div className="h-9 w-14 overflow-hidden rounded bg-muted">
                       <img
@@ -150,7 +156,10 @@ export function GemTable() {
                         variant="ghost"
                         size="icon"
                         className="h-8 w-8"
-                        onClick={() => handleToggle(gem.id)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          handleToggle(gem.id)
+                        }}
                         title={gem.published ? "Unpublish" : "Publish"}
                       >
                         {gem.published ? (
@@ -167,6 +176,7 @@ export function GemTable() {
                         size="icon"
                         className="h-8 w-8"
                         asChild
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Link href={`/admin/${gem.id}/edit`}>
                           <PencilSimple className="h-4 w-4" />
@@ -177,7 +187,10 @@ export function GemTable() {
                         variant="ghost"
                         size="icon"
                         className="h-8 w-8 text-destructive hover:text-destructive"
-                        onClick={() => setDeleteTarget(gem)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setDeleteTarget(gem)
+                        }}
                       >
                         <Trash className="h-4 w-4" />
                         <span className="sr-only">Delete</span>
