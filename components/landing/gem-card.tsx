@@ -36,7 +36,7 @@ export function GemCard({ gem }: GemCardProps) {
         </div>
 
         {/* Bottom Text */}
-        <div className="flex flex-col gap-2 pr-[120px]">
+        <div className="flex flex-col gap-2 pr-[80px]">
           <h3 className="font-sans text-[16px] font-bold leading-[20px] text-white">
             {gem.title}
           </h3>
