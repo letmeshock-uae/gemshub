@@ -37,9 +37,9 @@
     "description": "Generates optimized SQL queries from natural language descriptions of what you need.",
     "url": "https://gemini.google.com/gem/sql-query-builder",
     "previewImageUrl": "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?w=600&h=338&fit=crop",
-    "published": false,
+    "published": true,
     "createdAt": "2025-10-04T11:00:00.000Z",
-    "updatedAt": "2026-02-18T07:26:57.325Z"
+    "updatedAt": "2025-10-04T11:00:00.000Z"
   },
   {
     "id": "gem-marketing-copy",
@@ -47,9 +47,9 @@
     "description": "Creates compelling marketing copy for campaigns, landing pages, and social media.",
     "url": "https://gemini.google.com/gem/marketing-copy-gen",
     "previewImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=338&fit=crop",
-    "published": false,
+    "published": true,
     "createdAt": "2025-10-05T12:00:00.000Z",
-    "updatedAt": "2026-02-18T07:27:42.743Z"
+    "updatedAt": "2025-10-05T12:00:00.000Z"
   },
   {
     "id": "gem-data-analyst",
@@ -57,9 +57,9 @@
     "description": "Helps interpret datasets, generate charts, and uncover trends from raw numbers.",
     "url": "https://gemini.google.com/gem/data-analysis-companion",
     "previewImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=338&fit=crop",
-    "published": false,
+    "published": true,
     "createdAt": "2025-10-06T13:00:00.000Z",
-    "updatedAt": "2026-02-18T07:27:34.856Z"
+    "updatedAt": "2025-10-06T13:00:00.000Z"
   },
   {
     "id": "gem-bug-detective",
@@ -67,9 +67,9 @@
     "description": "Analyzes error logs and stack traces to pinpoint root causes and suggest fixes.",
     "url": "https://gemini.google.com/gem/bug-detective",
     "previewImageUrl": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=338&fit=crop",
-    "published": true,
+    "published": false,
     "createdAt": "2025-10-07T14:00:00.000Z",
-    "updatedAt": "2025-10-07T14:00:00.000Z"
+    "updatedAt": "2026-02-18T07:27:51.987Z"
   },
   {
     "id": "gem-doc-writer",
@@ -77,9 +77,9 @@
     "description": "Generates clear technical documentation from code, comments, and API schemas.",
     "url": "https://gemini.google.com/gem/documentation-writer",
     "previewImageUrl": "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?w=600&h=338&fit=crop",
-    "published": true,
+    "published": false,
     "createdAt": "2025-10-08T15:00:00.000Z",
-    "updatedAt": "2025-10-08T15:00:00.000Z"
+    "updatedAt": "2026-02-18T07:27:00.264Z"
   },
   {
     "id": "gem-persona-research",
@@ -87,9 +87,9 @@
     "description": "Creates detailed user personas based on research inputs and market data.",
     "url": "https://gemini.google.com/gem/user-persona-builder",
     "previewImageUrl": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=338&fit=crop",
-    "published": true,
+    "published": false,
     "createdAt": "2025-10-09T16:00:00.000Z",
-    "updatedAt": "2025-10-09T16:00:00.000Z"
+    "updatedAt": "2026-02-18T07:27:01.310Z"
   },
   {
     "id": "gem-onboarding-guide",
